@@ -1,0 +1,7 @@
+TYPO3:
+  Neos:
+    nodeTypes:
+      groups:
+        blog:
+          position: 800
+          label: 'Blog'

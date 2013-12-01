@@ -1,0 +1,36 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<neos:contentElement node="{node}">
+	<f:if condition="{posts}">
+		<f:then>
+			<ul>
+				<f:for each="{posts}" as="singlePost" iteration="postIterator">
+					<li>
+						<f:if condition="{showFullFirstPost}">
+							<f:then>
+								<f:if condition="{postIterator.isFirst}">
+									<f:then>
+										<ts:render path="post" context="{post:singlePost}" />
+									</f:then>
+									<f:else>
+										<ts:render path="listItem" context="{post:singlePost}" />
+									</f:else>
+								</f:if>
+							</f:then>
+							<f:else>
+								<ts:render path="listItem" context="{post:singlePost}" />
+							</f:else>
+						</f:if>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<div data-alert class="alert-box warning radius">
+				<p>Do you have a parent page set for your blog posts?</p>
+				<p>If you do, do you have any posts written yet?</p>
+				<a href="#" class="close">&times;</a>
+			</div>
+		</f:else>
+	</f:if>
+</neos:contentElement>

@@ -1,0 +1,60 @@
+'SimplyAdmire.Blog:Post':
+  superTypes: ['TYPO3.Neos:Page']
+  ui:
+    label: 'Blog Post'
+    icon: 'icon-edit'
+    group: 'blog'
+  properties:
+    timeToRead:
+      type: integer
+      defaultVaue: 5
+      ui:
+        label: 'Time to read (approxmiately) in minutes'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+    datePublished:
+      type: date
+      ui:
+        label: 'Publication Date'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+      validation:
+        notEmpty: []
+
+'SimplyAdmire.Blog:Overview':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Blog Posts Overview'
+    icon: 'icon-puzzle-piece'
+    group: 'blog'
+    inspector:
+      groups:
+        configuration:
+          label: 'Configuration'
+          position: 5
+  nonEditableOverlay: false
+  properties:
+    postsPage:
+      type: reference
+      ui:
+        label: 'Select the parent page of your posts'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'configuration'
+    showFullFirstPost:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Show the last post in full'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'configuration'
+
+'SimplyAdmire.Blog:LastPost':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Last Blog Post'
+    icon: 'icon-edit'
+    group: 'blog'
