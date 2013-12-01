@@ -1,0 +1,14 @@
+{
+    "name": "simplyadmire/blog",
+    "type": "typo3-flow-package",
+    "description": null,
+    "version": null,
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "SimplyAdmire\\Blog": "Classes"
+        }
+    }
+}
