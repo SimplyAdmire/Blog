@@ -35,5 +35,3 @@ prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.Neos:Template) {
 		nodePath = 'main'
 	}
 }
-
-prototype(SimplyAdmire.Blog:LastPost) < prototype(SimplyAdmire.Blog:Post)

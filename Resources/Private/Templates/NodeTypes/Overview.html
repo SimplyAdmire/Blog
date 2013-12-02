@@ -3,27 +3,38 @@
 <neos:contentElement node="{node}">
 	<f:if condition="{posts}">
 		<f:then>
-			<ul>
-				<f:for each="{posts}" as="singlePost" iteration="postIterator">
-					<li>
-						<f:if condition="{showFullFirstPost}">
-							<f:then>
-								<f:if condition="{postIterator.isFirst}">
+			<f:if condition="{onlyShowFirstPost}">
+				<f:then>
+					<f:for each="{posts}" as="singlePost" iteration="postIterator">
+						<f:if condition="{postIterator.isFirst}">
+							<ts:render path="post" context="{post:singlePost}" />
+						</f:if>
+					</f:for>
+				</f:then>
+				<f:else>
+					<ul>
+						<f:for each="{posts}" as="singlePost" iteration="postIterator">
+							<li>
+								<f:if condition="{showFullFirstPost}">
 									<f:then>
-										<ts:render path="post" context="{post:singlePost}" />
+										<f:if condition="{postIterator.isFirst}">
+											<f:then>
+												<ts:render path="post" context="{post:singlePost}" />
+											</f:then>
+											<f:else>
+												<ts:render path="listItem" context="{post:singlePost}" />
+											</f:else>
+										</f:if>
 									</f:then>
 									<f:else>
 										<ts:render path="listItem" context="{post:singlePost}" />
 									</f:else>
 								</f:if>
-							</f:then>
-							<f:else>
-								<ts:render path="listItem" context="{post:singlePost}" />
-							</f:else>
-						</f:if>
-					</li>
-				</f:for>
-			</ul>
+							</li>
+						</f:for>
+					</ul>
+				</f:else>
+			</f:if>
 		</f:then>
 		<f:else>
 			<div data-alert class="alert-box warning radius">

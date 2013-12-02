@@ -51,10 +51,11 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'configuration'
-
-'SimplyAdmire.Blog:LastPost':
-  superTypes: ['TYPO3.Neos:Content']
-  ui:
-    label: 'Last Blog Post'
-    icon: 'icon-edit'
-    group: 'blog'
+    onlyShowFirstPost:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Only show the latest post'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'configuration'
