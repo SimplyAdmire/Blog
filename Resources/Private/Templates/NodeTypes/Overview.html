@@ -8,11 +8,18 @@
 					<f:for each="{posts}" as="singlePost" iteration="postIterator">
 						<f:if condition="{postIterator.isFirst}">
 							<ts:render path="post" context="{post:singlePost}" />
+							<footer class="row collapse">
+								<div class="small-12 columns">
+									<p>
+										<neos:link.node node="{singlePost}"><i class="fa fa-link"></i> Permalink</neos:link.node>
+									</p>
+								</div>
+							</footer>
 						</f:if>
 					</f:for>
 				</f:then>
 				<f:else>
-					<ul>
+					<ul class="no-bullet">
 						<f:for each="{posts}" as="singlePost" iteration="postIterator">
 							<li>
 								<f:if condition="{showFullFirstPost}">
