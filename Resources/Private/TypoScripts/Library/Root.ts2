@@ -1,6 +1,6 @@
 # TYPO3.Neos:Breadcrumb provides a basic breadcrumb navigation
 #
-prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Template) {
+prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/Overview.html'
 	posts = ${q(node).property('postsPage') ? q(site).find(q(node).property('postsPage').path).children('[instanceof SimplyAdmire.Blog:Post]') : ''}
 	showFullFirstPost = ${q(node).property('showFullFirstPost')}
@@ -17,7 +17,7 @@ prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Template) {
 }
 
 # Abstract render definition for a single content column in a multi column element
-prototype(SimplyAdmire.Blog:ListItem) < prototype(TYPO3.Neos:Template) {
+prototype(SimplyAdmire.Blog:ListItem) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/ListItem.html'
 	title = ${q(node).property('title')}
 	datePublished = ${q(node).property('datePublished')}
@@ -27,7 +27,7 @@ prototype(SimplyAdmire.Blog:ListItem) < prototype(TYPO3.Neos:Template) {
 }
 
 # Abstract render definition for a single content column in a multi column element
-prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.Neos:Template) {
+prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/Post.html'
 	title = ${q(node).property('title')}
 	datePublished = ${q(node).property('datePublished')}
