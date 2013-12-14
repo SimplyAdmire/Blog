@@ -1,5 +1,3 @@
-# TYPO3.Neos:Breadcrumb provides a basic breadcrumb navigation
-#
 prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/Overview.html'
 	posts = ${q(node).property('postsPage') ? q(site).find(q(node).property('postsPage').path).children('[instanceof SimplyAdmire.Blog:Post]') : ''}
@@ -16,7 +14,6 @@ prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
 	}
 }
 
-# Abstract render definition for a single content column in a multi column element
 prototype(SimplyAdmire.Blog:ListItem) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/ListItem.html'
 	title = ${q(node).property('title')}
@@ -26,7 +23,6 @@ prototype(SimplyAdmire.Blog:ListItem) < prototype(TYPO3.Neos:Content) {
 	}
 }
 
-# Abstract render definition for a single content column in a multi column element
 prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/Post.html'
 	title = ${q(node).property('title')}
@@ -34,4 +30,9 @@ prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.Neos:Content) {
 	content = TYPO3.Neos:ContentCollection {
 		nodePath = 'main'
 	}
+}
+
+prototype(SimplyAdmire.Blog:Code) < prototype(TYPO3.Neos:Content) {
+	text = ${q(node).property('text')}
+	codeType = ${q(node).property('codeType')}
 }

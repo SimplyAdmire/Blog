@@ -1,5 +1,5 @@
 'SimplyAdmire.Blog:Post':
-  superTypes: ['TYPO3.Neos:Page']
+  superTypes: ['TYPO3.Neos.NodeTypes:Page']
   ui:
     label: 'Blog Post'
     icon: 'icon-edit'
@@ -59,3 +59,62 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'configuration'
+
+'SimplyAdmire.Blog:Code':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Code'
+    icon: 'icon-code'
+    inspector:
+      groups:
+        configuration:
+          label: 'Configuration'
+  properties:
+    text:
+      type: string
+      defaultValue: 'Enter your code here'
+      ui:
+        label: 'Code'
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            'b': FALSE
+            'i': FALSE
+            'u': FALSE
+            'sub': FALSE
+            'sup': FALSE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': FALSE
+          'table':
+            'table': FALSE
+          'list':
+            'ol': FALSE
+            'ul': FALSE
+          'link':
+            'a': FALSE
+    codeType:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Type of code'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'configuration'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              html:
+                label: 'HTML'
+              css:
+                label: 'CSS'
+              php:
+                label: 'PHP'
+              shell:
+                label: 'Shell script'
