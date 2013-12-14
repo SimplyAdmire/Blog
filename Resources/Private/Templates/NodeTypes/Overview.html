@@ -7,7 +7,7 @@
 				<f:then>
 					<f:for each="{posts}" as="singlePost" iteration="postIterator">
 						<f:if condition="{postIterator.isFirst}">
-							<ts:render path="post" context="{post:singlePost}" />
+							<ts:render path="post" context="{node:singlePost}" />
 							<footer class="row collapse">
 								<div class="small-12 columns">
 									<p>
@@ -26,15 +26,15 @@
 									<f:then>
 										<f:if condition="{postIterator.isFirst}">
 											<f:then>
-												<ts:render path="post" context="{post:singlePost}" />
+												<ts:render path="post" context="{node:singlePost}" />
 											</f:then>
 											<f:else>
-												<ts:render path="listItem" context="{post:singlePost}" />
+												<ts:render path="listItem" context="{node:singlePost}" />
 											</f:else>
 										</f:if>
 									</f:then>
 									<f:else>
-										<ts:render path="listItem" context="{post:singlePost}" />
+										<ts:render path="listItem" context="{node:singlePost}" />
 									</f:else>
 								</f:if>
 							</li>
