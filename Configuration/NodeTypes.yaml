@@ -1,5 +1,8 @@
 'SimplyAdmire.Blog:Post':
-  superTypes: ['TYPO3.Neos.NodeTypes:Page']
+  superTypes: ['TYPO3.Neos:Document']
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'Blog Post'
     icon: 'icon-edit'
