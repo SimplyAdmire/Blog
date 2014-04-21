@@ -1,0 +1,27 @@
+'SimplyAdmire.Blog:Post':
+  superTypes: ['TYPO3.Neos:Document']
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Blog Post'
+    icon: 'icon-edit'
+    group: 'blog'
+  properties:
+    timeToRead:
+      type: integer
+      defaultVaue: 5
+      ui:
+        label: 'Time to read (approxmiately) in minutes'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+    datePublished:
+      type: date
+      ui:
+        label: 'Publication Date'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+      validation:
+        notEmpty: []

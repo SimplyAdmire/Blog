@@ -1,26 +1,36 @@
-prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
-	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/Overview.html'
-	posts = ${q(node).property('postsPage') ? q(site).find(q(node).property('postsPage').path).children('[instanceof SimplyAdmire.Blog:Post]') : ''}
-	showFullFirstPost = ${q(node).property('showFullFirstPost')}
-	post = TYPO3.TypoScript:Template {
-		templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/Post.html'
-		title = ${q(node).property('title')}
-		datePublished = ${q(node).property('datePublished')}
-		content = TYPO3.Neos:ContentCollection {
-			nodePath = 'main'
-		}
-	}
-	listItem = TYPO3.TypoScript:Template {
-		templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/NodeTypes/ListItem.html'
-		title = ${q(node).property('title')}
-		datePublished = ${q(node).property('datePublished')}
-		content = TYPO3.Neos:ContentCollection {
-			nodePath = 'main'
-		}
+prototype(SimplyAdmire.Blog:Code) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Code.html'
+	text = ${q(node).property('text')}
+	codeType = ${q(node).property('codeType')}
+}
+
+prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogPost {
+	condition = ${q(node).is('[instanceof SimplyAdmire.Blog:Post]')}
+	type = 'SimplyAdmire.Blog:Post'
+	@position = 'start'
+}
+
+prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Post.html'
+	node = ${node}
+	title = ${q(node).property('title')}
+	datePublished = ${q(node).property('datePublished')}
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
 	}
 }
 
-prototype(SimplyAdmire.Blog:Code) < prototype(TYPO3.Neos:Content) {
-	text = ${q(node).property('text')}
-	codeType = ${q(node).property('codeType')}
+prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Overview.html'
+	posts = ${q(node).property('postsPage') ? q(site).find(q(node).property('postsPage').path).children('[instanceof SimplyAdmire.Blog:Post]') : ''}
+	showFullFirstPost = ${q(node).property('showFullFirstPost')}
+	post = SimplyAdmire.Blog:Post
+	listItem = TYPO3.TypoScript:Template {
+		templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ProtoTypes/ListItem.html'
+		title = ${q(node).property('title')}
+		datePublished = ${q(node).property('datePublished')}
+		content = TYPO3.Neos:ContentCollection {
+			nodePath = 'main'
+		}
+	}
 }
