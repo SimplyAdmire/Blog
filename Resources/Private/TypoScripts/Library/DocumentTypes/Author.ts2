@@ -1,0 +1,14 @@
+prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogPerson {
+	condition = ${q(node).is('[instanceof SimplyAdmire.Blog:Person]')}
+	type = 'SimplyAdmire.Blog:Person'
+	@position = 'start'
+}
+
+prototype(SimplyAdmire.Blog:Person) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Author.html'
+	node = ${node}
+	title = ${q(node).property('title')}
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+}

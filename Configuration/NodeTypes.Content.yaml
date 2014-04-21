@@ -11,13 +11,6 @@
           position: 5
   nonEditableOverlay: false
   properties:
-    postsPage:
-      type: reference
-      ui:
-        label: 'Select the parent page of your posts'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'configuration'
     showFullFirstPost:
       type: boolean
       defaultValue: false
@@ -26,14 +19,18 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'configuration'
-    onlyShowFirstPost:
-      type: boolean
-      defaultValue: false
-      ui:
-        label: 'Only show the latest post'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'configuration'
+
+'SimplyAdmire.Blog:LatestPost':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Latest Blog Post'
+    icon: 'icon-puzzle-piece'
+    group: 'blog'
+    inspector:
+      groups:
+        configuration:
+          label: 'Configuration'
+          position: 5
 
 'SimplyAdmire.Blog:Code':
   superTypes: ['TYPO3.Neos:Content']

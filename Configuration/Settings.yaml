@@ -5,3 +5,8 @@ TYPO3:
         blog:
           position: 800
           label: 'Blog'
+
+SimplyAdmire:
+  Blog:
+    disqus:
+      shortname: ''

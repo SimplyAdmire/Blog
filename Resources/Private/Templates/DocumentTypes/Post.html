@@ -1,4 +1,60 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<h1>{title} <small>{datePublished -> f:format.date()}</small></h1>
-<ts:render path="content" />
+<article>
+	<header>
+		<h1>{title}
+			<small>{datePublished -> f:format.date()}</small>
+		</h1>
+	</header>
+	<main>
+		<ts:render path="content"/>
+	</main>
+	<footer>
+		<f:if condition="{categories}">
+			<ul class="inline-list left">
+				<f:for each="{categories}" as="category">
+					<li>
+						<small><i class="fa fa-tag"></i> {category.properties.title}</small>
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
+		<f:if condition="{author}">
+			<ul class="inline-list right">
+				<li>
+					<small><i class="fa fa-user"></i> {author.properties.title}</small>
+				</li>
+			</ul>
+		</f:if>
+		<hr/>
+
+		<f:if condition="{enableCommenting}">
+			<f:then>
+				<f:if condition="{disqus.shortname} != ''">
+					<f:then>
+						<div id="disqus_thread"></div>
+						<script type="text/javascript">
+							var disqus_shortname = '{disqus.shortname}';
+							var disqus_identifier = '{node.path}';
+							var disqus_title = '{title}';
+							(function() {
+								var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+								dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+							})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+						<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+					</f:then>
+					<f:else>
+						<p>Please provide a disqus shortname in the settings.</p>
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+				<p class="text-center"><small>Commenting is disabled for this article.</small></p>
+			</f:else>
+		</f:if>
+
+	</footer>
+</article>

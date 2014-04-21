@@ -1,0 +1,16 @@
+prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogPost {
+	condition = ${q(node).is('[instanceof SimplyAdmire.Blog:Post]')}
+	type = 'SimplyAdmire.Blog:Post'
+	@position = 'start'
+}
+
+prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Post.html'
+	node = ${node}
+	title = ${q(node).property('title')}
+	disqus = ${Configuration.setting('SimplyAdmire.Blog.disqus')}
+	datePublished = ${q(node).property('datePublished')}
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+}

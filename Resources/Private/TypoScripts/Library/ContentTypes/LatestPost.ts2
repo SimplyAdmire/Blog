@@ -1,0 +1,7 @@
+prototype(SimplyAdmire.Blog:LatestPost) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/LatestPost.html'
+	post = ${q(ElasticSearch.query(site).nodeType('SimplyAdmire.Blog:Post').sortDesc('datePublished').limit(1).execute()).get(0)}
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = "."
+	}
+}

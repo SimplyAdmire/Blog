@@ -1,0 +1,14 @@
+prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogCategory {
+	condition = ${q(node).is('[instanceof SimplyAdmire.Blog:Category]')}
+	type = 'SimplyAdmire.Blog:Category'
+	@position = 'start'
+}
+
+prototype(SimplyAdmire.Blog:Category) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Category.html'
+	node = ${node}
+	title = ${q(node).property('title')}
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+}

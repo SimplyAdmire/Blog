@@ -25,3 +25,64 @@
           group: 'document'
       validation:
         notEmpty: []
+    author:
+      type: 'reference'
+      ui:
+        label: 'Author'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+          editorOptions:
+            nodeTypes: ['SimplyAdmire.Blog:Author']
+    categories:
+      type: 'references'
+      ui:
+        label: 'Categories'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+          editorOptions:
+            nodeTypes: ['SimplyAdmire.Blog:Category']
+    enableCommenting:
+      type: boolean
+      ui:
+        label: 'Enable commenting'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+
+
+'SimplyAdmire.Blog:Folder':
+  superTypes:
+    - 'TYPO3.Neos:Document'
+  ui:
+    label: 'Folder'
+    icon: 'icon-folder-close'
+    group: 'blog'
+  properties:
+    _hidden:
+      defaultValue: TRUE
+
+'SimplyAdmire.Blog:Category':
+  superTypes: ['TYPO3.Neos:Document']
+  ui:
+    label: 'Category'
+    icon: 'icon-tag'
+    group: 'blog'
+    search:
+      searchCategory: 'Category'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'
+
+'SimplyAdmire.Blog:Author':
+  superTypes: ['TYPO3.Neos:Document']
+  ui:
+    label: 'Author'
+    icon: 'icon-user'
+    group: 'blog'
+    search:
+      searchCategory: 'Author'
+  childNodes:
+    main:
+      type: 'TYPO3.Neos:ContentCollection'

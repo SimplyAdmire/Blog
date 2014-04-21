@@ -1,0 +1,5 @@
+prototype(SimplyAdmire.Blog:Code) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Code.html'
+	text = ${q(node).property('text')}
+	codeType = ${q(node).property('codeType')}
+}

@@ -1,0 +1,14 @@
+prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogFolder {
+	condition = ${q(node).is('[instanceof SimplyAdmire.Blog:Folder]')}
+	type = 'SimplyAdmire.Blog:Folder'
+	@position = 'start'
+}
+
+prototype(SimplyAdmire.Blog:Folder) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Folder.html'
+	node = ${node}
+	title = ${q(node).property('title')}
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'main'
+	}
+}

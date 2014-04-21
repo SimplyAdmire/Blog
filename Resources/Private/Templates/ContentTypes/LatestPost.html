@@ -1,0 +1,33 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<article>
+	<header>
+		<h1>{post.properties.title}
+			<small>{post.properties.datePublished -> f:format.date()}</small>
+		</h1>
+	</header>
+	<main>
+		<ts:render path="content" context="{node:post}"/>
+	</main>
+	<footer>
+		<f:if condition="{post.properties.categories}">
+			<ul class="inline-list left">
+				<f:for each="{post.properties.categories}" as="category">
+					<li>
+						<small><i class="fa fa-tag"></i> {category.properties.title}</small>
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
+		<ul class="inline-list right">
+			<li><small><neos:link.node node="{post}"><i class="fa fa-link"></i> Permalink</neos:link.node></small></li>
+			<f:if condition="{post.properties.author}">
+				<li class="divider"></li>
+				<li>
+					<small><i class="fa fa-user"></i> {post.properties.author.properties.title}</small>
+				</li>
+			</f:if>
+		</ul>
+
+	</footer>
+</article>
