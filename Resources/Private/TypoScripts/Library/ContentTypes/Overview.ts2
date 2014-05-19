@@ -8,6 +8,7 @@ prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
 		templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ProtoTypes/ListItem.html'
 		title = ${q(node).property('title')}
 		datePublished = ${q(node).property('datePublished')}
+		node = ${node}
 		content = TYPO3.Neos:ContentCollection {
 			nodePath = 'main'
 		}
