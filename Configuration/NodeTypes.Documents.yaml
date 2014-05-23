@@ -59,9 +59,6 @@
     label: 'Folder'
     icon: 'icon-folder-close'
     group: 'blog'
-  properties:
-    _hidden:
-      defaultValue: TRUE
 
 'SimplyAdmire.Blog:Category':
   superTypes: ['TYPO3.Neos:Document']

@@ -6,3 +6,7 @@ include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/DocumentTypes/
 include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Overview.ts2
 include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/LatestPost.ts2
 include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Code.ts2
+include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Teaser.ts2
+include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Footnotes.ts2
+include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Quote.ts2
+include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Highlight.ts2

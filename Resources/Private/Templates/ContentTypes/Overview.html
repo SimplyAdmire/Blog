@@ -2,7 +2,7 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <f:if condition="{posts}">
 	<f:then>
-		<ul class="no-bullet">
+		<ul{attributes -> f:format.raw()}>
 			<f:for each="{posts}" as="singlePost" iteration="postIterator">
 				<li>
 					<f:if condition="{showFullFirstPost}">

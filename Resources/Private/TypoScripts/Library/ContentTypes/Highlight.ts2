@@ -1,0 +1,4 @@
+prototype(SimplyAdmire.Blog:Highlight) < prototype(TYPO3.Neos:Content) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Text.html'
+	attributes.class = 'highlight'
+}
