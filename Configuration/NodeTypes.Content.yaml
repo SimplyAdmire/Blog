@@ -90,3 +90,61 @@
                 label: 'PHP'
               shell:
                 label: 'Shell script'
+
+'SimplyAdmire.Blog:Teaser':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Teaser'
+    icon: 'icon-reorder'
+  properties:
+    text:
+      type: string
+      defaultValue: 'Enter a teaser for your article here'
+      ui:
+        label: 'Teaser'
+        inlineEditable: TRUE
+
+'SimplyAdmire.Blog:Footnotes':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Footnotes'
+    icon: 'icon-exchange'
+  properties:
+    text:
+      type: string
+      defaultValue: 'Enter a listing of your footnotes here'
+      ui:
+        label: 'Footnotes'
+        inlineEditable: TRUE
+
+'SimplyAdmire.Blog:Quote':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Quote'
+    icon: 'icon-quote-right'
+  properties:
+    text:
+      type: string
+      defaultValue: 'Enter a quote here'
+      ui:
+        label: 'Quote'
+        inlineEditable: TRUE
+    cite:
+      type: string
+      defaultValue: 'Enter the source'
+      ui:
+        label: 'Cite'
+        inlineEditable: TRUE
+
+'SimplyAdmire.Blog:Highlight':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Highlight'
+    icon: 'icon-lightbulb'
+  properties:
+    text:
+      type: string
+      defaultValue: 'Enter a highlight here'
+      ui:
+        label: 'Highlight'
+        inlineEditable: TRUE

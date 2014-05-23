@@ -1,7 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 <h3>{title} <small>{datePublished -> f:format.date()}</small></h3>
-<f:format.crop maxCharacters="300">
+<f:format.crop maxCharacters="{maxCharacters}">
 	<ts:render path="content" />
 </f:format.crop>
 <neos:link.node node="{node}">read more</neos:link.node>

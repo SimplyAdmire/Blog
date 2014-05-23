@@ -1,0 +1,7 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<blockquote>
+	{neos:contentElement.editable(property: 'text') -> f:format.raw()}
+	<f:if condition="{cite}">
+		<cite>{neos:contentElement.editable(property: 'text') -> f:format.raw()}</cite>
+	</f:if>
+</blockquote>
