@@ -9,7 +9,7 @@
     group: 'blog'
   properties:
     timeToRead:
-      type: integer
+      type: 'integer'
       defaultVaue: 5
       ui:
         label: 'Time to read (approxmiately) in minutes'
@@ -17,7 +17,7 @@
         inspector:
           group: 'document'
     datePublished:
-      type: date
+      type: 'date'
       ui:
         label: 'Publication Date'
         reloadIfChanged: TRUE
@@ -44,7 +44,7 @@
           editorOptions:
             nodeTypes: ['SimplyAdmire.Blog:Category']
     enableCommenting:
-      type: boolean
+      type: 'boolean'
       ui:
         label: 'Enable commenting'
         reloadIfChanged: TRUE
