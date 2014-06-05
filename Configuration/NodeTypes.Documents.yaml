@@ -50,6 +50,9 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'document'
+  postprocessors:
+    'Postprocessor':
+      postprocessor: 'SimplyAdmire\Blog\NodeTypePostprocessors\PostNodeTypePostprocessor'
 
 
 'SimplyAdmire.Blog:Folder':
