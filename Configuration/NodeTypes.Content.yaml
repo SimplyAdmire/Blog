@@ -103,6 +103,26 @@
       ui:
         label: 'Teaser'
         inlineEditable: TRUE
+        aloha:
+          'format':
+            'b': TRUE
+            'i': TRUE
+            'u': TRUE
+            'sub': TRUE
+            'sup': TRUE
+            'p': TRUE
+            'h1': FALSE
+            'h2': FLASE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': TRUE
+          'table':
+            'table': FALSE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
 
 'SimplyAdmire.Blog:Footnotes':
   superTypes: ['TYPO3.Neos:Content']
@@ -116,6 +136,26 @@
       ui:
         label: 'Footnotes'
         inlineEditable: TRUE
+        aloha:
+          'format':
+            'b': TRUE
+            'i': TRUE
+            'u': TRUE
+            'sub': TRUE
+            'sup': TRUE
+            'p': TRUE
+            'h1': FALSE
+            'h2': FLASE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': TRUE
+          'table':
+            'table': FALSE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
 
 'SimplyAdmire.Blog:Quote':
   superTypes: ['TYPO3.Neos:Content']
@@ -129,6 +169,26 @@
       ui:
         label: 'Quote'
         inlineEditable: TRUE
+        aloha:
+          'format':
+            'b': TRUE
+            'i': TRUE
+            'u': TRUE
+            'sub': TRUE
+            'sup': TRUE
+            'p': TRUE
+            'h1': FALSE
+            'h2': FLASE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': TRUE
+          'table':
+            'table': FALSE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
     cite:
       type: string
       defaultValue: 'Enter the source'
@@ -148,3 +208,23 @@
       ui:
         label: 'Highlight'
         inlineEditable: TRUE
+        aloha:
+          'format':
+            'b': TRUE
+            'i': TRUE
+            'u': TRUE
+            'sub': TRUE
+            'sup': TRUE
+            'p': TRUE
+            'h1': FALSE
+            'h2': FLASE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': TRUE
+          'table':
+            'table': FALSE
+          'list':
+            'ol': TRUE
+            'ul': TRUE
+          'link':
+            'a': TRUE
