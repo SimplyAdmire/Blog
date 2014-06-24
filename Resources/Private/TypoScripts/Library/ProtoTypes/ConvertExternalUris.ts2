@@ -1,0 +1,10 @@
+prototype(SimplyAdmire.Blog:ConvertExternalUris) {
+	@class = 'SimplyAdmire\\Blog\\TypoScript\\ConvertExternalUrisImplementation'
+	value = ${value}
+	node = ${node}
+}
+
+prototype(TYPO3.Neos:Content) {
+	text.@process.convertUris = TYPO3.Neos:ConvertUris
+	text.@process.convertExternalUris = SimplyAdmire.Blog:ConvertExternalUris
+}

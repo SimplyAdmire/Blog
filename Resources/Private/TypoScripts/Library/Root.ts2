@@ -10,3 +10,5 @@ include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/T
 include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Footnotes.ts2
 include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Quote.ts2
 include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Highlight.ts2
+
+include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ProtoTypes/ConvertExternalUris.ts2
