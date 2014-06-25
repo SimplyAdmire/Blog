@@ -23,11 +23,15 @@ class ConvertExternalUrisImplementation extends AbstractTypoScriptObject {
 	 */
 	public function evaluate() {
 		$text = $this->getValue();
+
 		if (!is_string($text)) {
 			throw new Exception(sprintf('Only strings can be processed by this TypoScript object, given: "%s".', gettype($text)), 1382624080);
 		}
+
 		$currentContext = $this->tsRuntime->getCurrentContext();
+
 		$node = $currentContext['node'];
+
 		if (!$node instanceof NodeInterface) {
 			throw new Exception(sprintf('The current node must be an instance of NodeInterface, given: "%s".', gettype($text)), 1382624087);
 		}
@@ -37,7 +41,8 @@ class ConvertExternalUrisImplementation extends AbstractTypoScriptObject {
 
 		/** @var \DOMDocument $dom */
 		$dom = new \DOMDocument();
-		$dom->loadHTML(utf8_decode($text), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+		$dom->loadHTML('<?xml encoding="UTF-8">' . $text);
+
 		/** @var \DOMNode $node */
 		foreach ($dom->getElementsByTagName('a') as $node) {
 			if (preg_match('~^(?:f|ht)tps?://~i', $node->getAttribute('href'))){
