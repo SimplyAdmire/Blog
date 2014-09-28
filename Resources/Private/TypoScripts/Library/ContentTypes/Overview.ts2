@@ -1,6 +1,6 @@
 prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Overview.html'
-	posts = ${ElasticSearch.query(site).nodeType('SimplyAdmire.Blog:Post').sortDesc('datePublished').execute()}
+	posts = ${Search.query(site).nodeType('SimplyAdmire.Blog:Post').sortDesc('datePublished').execute()}
 	post = SimplyAdmire.Blog:Post {
 		templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/LatestPost.html'
 	}
