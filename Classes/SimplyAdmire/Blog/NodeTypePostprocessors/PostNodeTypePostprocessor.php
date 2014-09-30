@@ -29,6 +29,7 @@ class PostNodeTypePostprocessor implements \TYPO3\TYPO3CR\NodeTypePostprocessor\
 	 * @return void
 	 */
 	public function process(NodeType $nodeType, array &$configuration, array $options) {
-		$configuration['properties']['datePublished']['defaultValue'] = new \DateTime();
+		$dateTime = new \DateTime();
+		$configuration['properties']['datePublished']['defaultValue'] = $dateTime->format('Y-m-d\TH:i:s');
 	}
 }

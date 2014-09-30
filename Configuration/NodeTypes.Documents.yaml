@@ -25,6 +25,12 @@
           group: 'document'
       validation:
         notEmpty: []
+      elasticSearch:
+        mapping:
+          type: date
+          include_in_all: false
+          format: 'date_time_no_millis'
+        indexing: '${(node.hiddenBeforeDateTime ? node.hiddenBeforeDateTime.format("Y-m-d\TH:i:s") + "Z" : null)}'
     author:
       type: 'reference'
       ui:
