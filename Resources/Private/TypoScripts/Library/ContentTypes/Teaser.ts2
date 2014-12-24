@@ -1,4 +1,4 @@
-prototype(SimplyAdmire.Blog:Teaser) < prototype(TYPO3.Neos:Content) {
-		templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Text.html'
-    	attributes.class = 'teaser'
+prototype(SimplyAdmire.Blog:Teaser) {
+	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Text.html'
+	attributes.class = 'typo3-neos-nodetypes-text teaser'
 }

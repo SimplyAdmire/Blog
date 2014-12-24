@@ -77,9 +77,6 @@
     group: 'blog'
     search:
       searchCategory: 'Category'
-  childNodes:
-    main:
-      type: 'TYPO3.Neos:ContentCollection'
 
 'SimplyAdmire.Blog:Author':
   superTypes: ['TYPO3.Neos:Document']
@@ -89,6 +86,11 @@
     group: 'blog'
     search:
       searchCategory: 'Author'
-  childNodes:
-    main:
-      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    profilePage:
+      type: 'reference'
+      ui:
+        label: 'Profile Page'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'

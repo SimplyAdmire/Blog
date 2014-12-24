@@ -1,4 +1,4 @@
-prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
+prototype(SimplyAdmire.Blog:Overview) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Overview.html'
 	posts = ${Search.query(site).nodeType('SimplyAdmire.Blog:Post').sortDesc('datePublished').execute()}
 	post = SimplyAdmire.Blog:Post {
@@ -12,7 +12,7 @@ prototype(SimplyAdmire.Blog:Overview) < prototype(TYPO3.Neos:Content) {
 		maxCharacters = 280
 		node = ${node}
 		content = TYPO3.TypoScript:Value {
-			value = ${String.trim(q(node).children('main').children('[instanceof TYPO3.Neos.NodeTypes:Text]').slice(0).property('text'))}
+			value = ${String.trim(q(node).children('main').children('[instanceof TYPO3.Neos.NodeTypes:TextMixin]').slice(0).property('text'))}
 			@process.convertUris = TYPO3.Neos:ConvertUris
 		}
 	}

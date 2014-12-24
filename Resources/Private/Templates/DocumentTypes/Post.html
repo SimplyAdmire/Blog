@@ -22,7 +22,7 @@
 		<f:if condition="{author}">
 			<ul class="inline-list right">
 				<li>
-					<small><i class="fa fa-user"></i> {author.properties.title}</small>
+					<small><i class="fa fa-user"></i> <neos:link.node node="{author.properties.profilePage}">{author.properties.title}</neos:link.node></small>
 				</li>
 			</ul>
 		</f:if>
@@ -46,7 +46,7 @@
 						<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 					</f:then>
 					<f:else>
-						<p>Please provide a disqus shortname in the settings.</p>
+						<p class="text-center"><small>Please provide a disqus shortname in the settings.</small></p>
 					</f:else>
 				</f:if>
 			</f:then>

@@ -92,37 +92,20 @@
                 label: 'Shell script'
 
 'SimplyAdmire.Blog:Teaser':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:TextMixin'
   ui:
     label: 'Teaser'
     icon: 'icon-reorder'
   properties:
     text:
       type: string
-      defaultValue: 'Enter a teaser for your article here'
       ui:
         label: 'Teaser'
         inlineEditable: TRUE
         aloha:
-          'format':
-            'b': TRUE
-            'i': TRUE
-            'u': TRUE
-            'sub': TRUE
-            'sup': TRUE
-            'p': TRUE
-            'h1': FALSE
-            'h2': FLASE
-            'h3': FALSE
-            'pre': FALSE
-            'removeFormat': TRUE
-          'table':
-            'table': FALSE
-          'list':
-            'ol': TRUE
-            'ul': TRUE
-          'link':
-            'a': TRUE
+          placeholder: 'Enter a teaser for your article here'
 
 'SimplyAdmire.Blog:Footnotes':
   superTypes: ['TYPO3.Neos:Content']

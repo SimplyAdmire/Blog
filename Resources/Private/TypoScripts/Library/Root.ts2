@@ -1,14 +1,2 @@
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/DocumentTypes/Post.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/DocumentTypes/Folder.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/DocumentTypes/Category.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/DocumentTypes/Author.ts2
-
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Overview.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/LatestPost.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Code.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Teaser.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Footnotes.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Quote.ts2
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ContentTypes/Highlight.ts2
-
-include: resource://SimplyAdmire.Blog/Private/TypoScripts/Library/ProtoTypes/ConvertExternalUris.ts2
+include: DocumentTypes/*
+include: ContentTypes/*

@@ -1,4 +1,13 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<h1>{title}</h1>
-<ts:render path="content" />
+<div id="neos-shortcut">
+	<p><em>{title}</em></p>
+	<f:if condition="{node.properties.profilePage}">
+		<f:then>
+			<p>Go to the <neos:link.node node="{node.properties.profilePage}">profile page</neos:link.node>.</p>
+		</f:then>
+		<f:else>
+			<p>If you want you can add a profile page in the inspector.</p>
+		</f:else>
+	</f:if>
+</div>

@@ -4,11 +4,6 @@ prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogCategory {
 	@position = 'start'
 }
 
-prototype(SimplyAdmire.Blog:Category) < prototype(TYPO3.TypoScript:Template) {
+prototype(SimplyAdmire.Blog:Category) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Category.html'
-	node = ${node}
-	title = ${q(node).property('title')}
-	content = TYPO3.Neos:ContentCollection {
-		nodePath = 'main'
-	}
 }

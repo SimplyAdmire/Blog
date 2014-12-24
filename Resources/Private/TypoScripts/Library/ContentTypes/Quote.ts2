@@ -1,4 +1,4 @@
-prototype(SimplyAdmire.Blog:Quote) < prototype(TYPO3.Neos:Content) {
+prototype(SimplyAdmire.Blog:Quote) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/ContentTypes/Quote.html'
 	text = ${q(node).property('text')}
 	cite = ${q(node).property('cite')}

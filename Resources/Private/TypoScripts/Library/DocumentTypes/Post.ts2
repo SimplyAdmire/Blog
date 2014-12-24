@@ -4,13 +4,9 @@ prototype(TYPO3.Neos:PrimaryContent).SimplyAdmireBlogPost {
 	@position = 'start'
 }
 
-prototype(SimplyAdmire.Blog:Post) < prototype(TYPO3.TypoScript:Template) {
+prototype(SimplyAdmire.Blog:Post) {
 	templatePath = 'resource://SimplyAdmire.Blog/Private/Templates/DocumentTypes/Post.html'
-	node = ${node}
-	title = ${q(node).property('title')}
 	disqus = ${Configuration.setting('SimplyAdmire.Blog.disqus')}
-	datePublished = ${q(node).property('datePublished')}
-	enableCommenting = ${q(node).property('enableCommenting')}
 	content = TYPO3.Neos:ContentCollection {
 		nodePath = 'main'
 	}

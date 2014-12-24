@@ -24,7 +24,7 @@
 			<f:if condition="{post.properties.author}">
 				<li class="divider"></li>
 				<li>
-					<small><i class="fa fa-user"></i> {post.properties.author.properties.title}</small>
+					<small><i class="fa fa-user"></i> <neos:link.node node="{post.properties.author.properties.profilePage}">{post.properties.author.properties.title}</neos:link.node></small>
 				</li>
 			</f:if>
 		</ul>
