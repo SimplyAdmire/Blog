@@ -20,7 +20,7 @@
 			</ul>
 		</f:if>
 		<ul class="inline-list right">
-			<li><small><f:if condition="{post.properties.enableCommenting}">Want to comment? Visit the dedicated url.&nbsp;&#10141;&nbsp;</f:if><neos:link.node node="{post}"><i class="fa fa-link"></i> Permalink</neos:link.node></small></li>
+			<li><small><f:if condition="{post.properties.enableCommenting}"><f:translate id="commenting.latestPost.leaveAComment" package="SimplyAdmire.Blog" />&nbsp;&#10141;&nbsp;</f:if><neos:link.node node="{post}"><i class="fa fa-link"></i> Permalink</neos:link.node></small></li>
 			<f:if condition="{post.properties.author}">
 				<li class="divider"></li>
 				<li>

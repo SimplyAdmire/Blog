@@ -5,6 +5,12 @@
 			<trans-unit id="readMore">
 				<source>read more</source>
 			</trans-unit>
+			<trans-unit id="commenting.isDisabled">
+				<source>Commenting is disabled for this article.</source>
+			</trans-unit>
+			<trans-unit id="commenting.latestPost.leaveAComment">
+				<source>Want to comment? Visit the dedicated url.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

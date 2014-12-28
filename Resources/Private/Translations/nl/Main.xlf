@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="SimplyAdmire.Blog" source-language="en" datatype="plaintext" target-language="nl">
+		<body>
+			<trans-unit id="readMore">
+				<source>read more</source>
+				<target xml:lang="nl">lees verder</target>
+			</trans-unit>
+			<trans-unit id="commenting.isDisabled">
+				<source>Commenting is disabled for this article.</source>
+				<target xml:lang="nl">Reageren op dit artikel is niet mogelijk.</target>
+			</trans-unit>
+			<trans-unit id="commenting.latestPost.leaveAComment">
+				<source>Want to comment? Visit the dedicated url.</source>
+				<target xml:lang="nl">Reageren op dit artikel? Bezoek de</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
